@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montagem Inteligente - Fteck Informática</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+        
+        :root {
+            --fteck-blue-dark: #0a1118;
+            --fteck-blue-mid: #13222f;
+            --fteck-cyan: #00d2ff;
+            --fteck-cyan-glow: rgba(0, 210, 255, 0.4);
+            --fteck-yellow: #fdd835;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #1a202c;
+            scroll-behavior: smooth;
+        }
+
+        .bg-fteck-dark { background-color: var(--fteck-blue-dark); }
+        .bg-fteck-mid { background-color: var(--fteck-blue-mid); }
+        .text-fteck-cyan { color: var(--fteck-cyan); }
+        .bg-fteck-cyan { background-color: var(--fteck-cyan); }
+        .bg-yellow-cta { background-color: var(--fteck-yellow); }
+        
+        .bg-circuit {
+            background-color: var(--fteck-blue-dark);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 210, 255, 0.05) 0%, transparent 40%);
+        }
+
+        .rounded-custom { border-radius: 24px; }
+        
+        .logo-glow {
+            filter: drop-shadow(0 0 8px var(--fteck-cyan));
+        }
+
+        .btn-shadow {
+            box-shadow: 0 10px 25px -5px rgba(253, 216, 53, 0.4);
+        }
+
+        .faq-item input:checked ~ .faq-content {
+            max-height: 500px;
+            padding-bottom: 20px;
+            opacity: 1;
+        }
+
+        .faq-content {
+            max-height: 0;
+            opacity: 0;
+            transition: all 0.4s ease-out;
+        }
+
+        @keyframes pulse-cyan {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+        }
+
+        .animate-pulse-cyan {
+            animation: pulse-cyan 2s infinite;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <nav class="bg-fteck-dark py-4 px-6 sticky top-0 z-50 border-b border-white/5 backdrop-blur-md bg-opacity-95">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-fteck-mid rounded-full flex items-center justify-center border border-fteck-cyan logo-glow">
+                    <span class="text-white font-black text-xl">F</span>
+                </div>
+                <div>
+                    <span class="text-white font-black text-lg tracking-tighter block leading-none">FTECK</span>
+                    <span class="text-fteck-cyan text-[9px] font-bold uppercase tracking-[0.2em]">Informática</span>
+                </div>
+            </div>
+            <a href="#checkout" class="bg-yellow-cta text-blue-950 px-5 py-2 rounded-full font-bold text-xs hover:scale-105 transition-all uppercase tracking-wider">
+                Quero o meu projeto
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-circuit text-white py-20 px-6 relative border-b border-fteck-cyan/10">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 bg-fteck-cyan/10 text-fteck-cyan px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-8 border border-fteck-cyan/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fteck-cyan opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-fteck-cyan"></span>
+                    </span>
+                    Consultoria de Hardware
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black leading-[1.1] mb-6">
+                    MONTAGEM INTELIGENTE:<br><span class="text-fteck-cyan italic">O PC IDEAL</span> PRA VOCÊ
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100/70 leading-relaxed mb-10 font-medium">
+                    Pare de gastar dinheiro com peças incompatíveis ou que não entregam o desempenho que você precisa. Eu projeto a configuração perfeita para o seu perfil e bolso.
+                </p>
+                <a href="#checkout" class="bg-yellow-cta text-blue-950 px-12 py-5 rounded-2xl font-black text-xl btn-shadow hover:scale-105 transition-all inline-block uppercase tracking-tighter">
+                    QUERO O MEU PROJETO AGORA!
+                </a>
+                <div class="mt-6 flex items-center justify-center md:justify-start gap-4 text-xs font-bold text-white/40 uppercase tracking-widest">
+                    <span><i class="fas fa-check text-fteck-cyan mr-1"></i> +9 Anos Exp.</span>
+                    <span><i class="fas fa-check text-fteck-cyan mr-1"></i> Análise Técnica</span>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-fteck-cyan opacity-20 blur-[80px] rounded-full"></div>
+                <div class="relative bg-fteck-mid p-2 rounded-custom border border-white/5 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=800" alt="Hardware Specialist" class="rounded-custom grayscale-[20%] brightness-90">
+                </div>
+                <div class="absolute -bottom-8 -right-8 bg-fteck-dark p-6 rounded-2xl border border-fteck-cyan/30 shadow-2xl hidden lg:block">
+                    <div class="text-fteck-cyan font-black text-3xl">100%</div>
+                    <div class="text-[10px] text-white/60 font-bold uppercase tracking-widest">Personalizado</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Video Placeholder -->
+    <section class="py-24 px-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-black text-fteck-dark mb-12 uppercase italic tracking-tighter">COMO FUNCIONA A CONSULTORIA FTECK?</h2>
+            <div class="aspect-video bg-fteck-dark rounded-[2rem] shadow-2xl border-[12px] border-white overflow-hidden relative group">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="mt-12">
+                <p class="text-gray-500 font-bold text-sm uppercase tracking-widest mb-6">Pronto para dar o próximo passo?</p>
+                <a href="#checkout" class="bg-fteck-dark text-white px-10 py-4 rounded-xl font-bold hover:bg-fteck-mid transition-all inline-block uppercase tracking-wider">
+                    Garantir Minha Vaga <i class="fas fa-arrow-right ml-2 text-fteck-cyan"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Criador -->
+    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <div class="md:w-1/2">
+            <div class="w-16 h-1 w-fteck-cyan bg-fteck-cyan mb-8"></div>
+            <h2 class="text-4xl font-black mb-8 text-fteck-dark uppercase leading-tight">
+                QUEM VAI PROJETAR <br> O SEU <span class="text-fteck-cyan">NOVO PC?</span>
+            </h2>
+            <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                <p>Sou o <span class="text-fteck-dark font-bold underline decoration-fteck-cyan decoration-4">Fábio</span>, fundador da Fteck Informática. Trabalho com tecnologia há mais de 9 anos, respirando montagem e reparo de hardware todos os dias.</p>
+                <p>No meu canal, mostro a realidade técnica: VRMs, análise de circuitos e a verdade sobre cada componente. Eu não sou um vendedor; sou um técnico focado em durabilidade e performance.</p>
+                <p>Já ajudei milhares de pessoas a não caírem em ciladas do mercado. Agora, vou usar esse conhecimento para desenhar o seu PC com inteligência e segurança.</p>
+            </div>
+        </div>
+        <div class="md:w-1/2 relative">
+            <div class="bg-fteck-dark p-1 rounded-custom">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800" alt="Especialista Fteck" class="rounded-custom brightness-75">
+            </div>
+            <div class="absolute -top-10 -right-4 bg-fteck-cyan text-blue-900 p-6 rounded-2xl font-black text-center shadow-xl">
+                <span class="block text-4xl">9+</span>
+                <span class="text-[10px] uppercase">Anos Exp.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus Section -->
+    <section class="bg-fteck-dark text-white py-24 px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-fteck-cyan opacity-[0.03] skew-x-12 translate-x-20"></div>
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
+            <div class="md:w-1/2">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-14 h-14 bg-fteck-cyan/10 rounded-xl flex items-center justify-center border border-fteck-cyan/30">
+                        <i class="fas fa-gift text-fteck-cyan text-2xl"></i>
+                    </div>
+                    <span class="text-fteck-cyan font-black uppercase tracking-widest italic">Presente Exclusivo</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black mb-6 leading-tight">GUIA DE COMPRA <br> INTELIGENTE FTECK</h2>
+                <p class="text-blue-100/60 text-lg leading-relaxed mb-8">
+                    Além da análise técnica personalizada, você recebe o meu guia com os **10 erros fatais** que mais fazem os compradores perderem dinheiro (e hardware) ao montar um PC.
+                </p>
+                <div class="bg-fteck-mid p-6 rounded-2xl border border-white/5 inline-block">
+                    <p class="text-sm font-bold uppercase tracking-widest text-fteck-cyan">SÓ QUEM FECHA A CONSULTORIA HOJE RECEBE!</p>
+                </div>
+            </div>
+            <div class="md:w-1/3 w-full">
+                <div class="bg-fteck-mid border border-fteck-cyan/20 p-10 rounded-3xl text-center shadow-2xl relative">
+                    <p class="text-xs font-bold text-white/40 uppercase tracking-[0.3em] mb-8">Esta oferta expira em:</p>
+                    <div class="flex justify-center gap-4 mb-10">
+                        <div class="text-center">
+                            <span id="hours" class="block text-4xl font-black text-fteck-cyan">18</span>
+                            <span class="text-[9px] uppercase font-bold opacity-40">Horas</span>
+                        </div>
+                        <span class="text-3xl font-bold opacity-20">:</span>
+                        <div class="text-center">
+                            <span id="minutes" class="block text-4xl font-black text-fteck-cyan">45</span>
+                            <span class="text-[9px] uppercase font-bold opacity-40">Min</span>
+                        </div>
+                        <span class="text-3xl font-bold opacity-20">:</span>
+                        <div class="text-center">
+                            <span id="seconds" class="block text-4xl font-black text-fteck-cyan">00</span>
+                            <span class="text-[9px] uppercase font-bold opacity-40">Seg</span>
+                        </div>
+                    </div>
+                    <a href="#checkout" class="bg-yellow-cta hover:scale-105 transition-all text-blue-950 w-full py-4 rounded-xl font-black text-lg block uppercase tracking-tighter btn-shadow">
+                        Quero Aproveitar!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia -->
+    <section class="py-24 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20">
+        <div class="md:w-1/3 flex justify-center">
+            <div class="w-64 h-64 bg-fteck-dark rounded-full border-[16px] border-fteck-cyan/10 flex items-center justify-center relative animate-pulse-cyan">
+                <div class="text-center">
+                    <span class="block text-fteck-cyan text-7xl font-black leading-none">7</span>
+                    <span class="block text-white font-black text-lg uppercase tracking-tighter">Dias</span>
+                </div>
+            </div>
+        </div>
+        <div class="md:w-2/3">
+            <h2 class="text-4xl font-black text-fteck-dark mb-6 uppercase italic tracking-tighter">Garantia Blindada</h2>
+            <div class="text-xl text-gray-600 leading-relaxed space-y-4 font-medium">
+                <p>Não gostou? Achou que não era para você? Sem estresse!</p>
+                <p>Você tem até 7 dias para pedir o reembolso direto na plataforma, sem perguntas e sem burocracia.</p>
+                <p class="text-fteck-dark font-black">Confio tanto na precisão técnica do meu trabalho que te dou essa segurança.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Checkout -->
+    <section id="checkout" class="py-24 px-6 bg-gray-100 flex justify-center">
+        <div class="bg-fteck-dark text-white p-12 rounded-[3rem] shadow-2xl max-w-md w-full text-center border-b-[16px] border-fteck-cyan relative overflow-hidden">
+            <div class="absolute -top-10 -left-10 w-32 h-32 bg-fteck-cyan opacity-10 rounded-full blur-3xl"></div>
+            
+            <i class="fas fa-microchip text-fteck-cyan text-5xl mb-10 logo-glow"></i>
+            
+            <p class="text-lg font-bold mb-8 text-blue-100 leading-relaxed">
+                Receba seu projeto técnico personalizado em até 48h úteis!
+            </p>
+            
+            <div class="h-px bg-white/5 w-full mb-10"></div>
+            
+            <span class="text-gray-500 line-through text-xl font-bold block mb-2">R$ 297,00</span>
+            <div class="text-7xl font-black text-fteck-cyan tracking-tighter mb-4 leading-none">R$ 147</div>
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-12 italic">Pagamento Único</p>
+
+            <button class="bg-yellow-cta hover:scale-[1.03] transition-all text-blue-950 w-full py-6 rounded-2xl font-black text-2xl uppercase tracking-tighter btn-shadow">
+                Comprar Agora
+            </button>
+            
+            <div class="mt-10 flex justify-center items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">
+                <span><i class="fas fa-lock text-fteck-cyan"></i> 100% Seguro</span>
+                <span><i class="fas fa-bolt text-fteck-cyan"></i> Acesso Imediato</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-16 uppercase italic text-fteck-dark underline decoration-fteck-cyan decoration-8 underline-offset-4">Dúvidas Frequentes</h2>
+        
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="faq-item border border-gray-200 rounded-2xl px-8 hover:border-fteck-cyan/30 transition-all">
+                <label class="flex justify-between items-center py-6 cursor-pointer group">
+                    <span class="text-lg font-bold group-hover:text-fteck-cyan transition-colors">Para quem é esta consultoria?</span>
+                    <input type="checkbox" class="hidden">
+                    <i class="fas fa-plus text-gray-300 text-xs transition-transform duration-300"></i>
+                </label>
+                <div class="faq-content">
+                    <p class="text-gray-500 pb-6 leading-relaxed">Para quem quer montar ou dar um upgrade no PC do jeito certo. Seja você gamer, editor ou profissional, meu foco é garantir o melhor desempenho pelo menor custo possível.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item border border-gray-200 rounded-2xl px-8 hover:border-fteck-cyan/30 transition-all">
+                <label class="flex justify-between items-center py-6 cursor-pointer group">
+                    <span class="text-lg font-bold group-hover:text-fteck-cyan transition-colors">Como funciona a entrega?</span>
+                    <input type="checkbox" class="hidden">
+                    <i class="fas fa-plus text-gray-300 text-xs transition-transform duration-300"></i>
+                </label>
+                <div class="faq-content">
+                    <p class="text-gray-500 pb-6 leading-relaxed">Logo após a compra, recebe um PDF de diagnóstico. Preenche os dados e envia-nos. Em até 48 horas úteis, entregamos o seu Relatório Técnico com a lista de peças e links de compra.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item border border-gray-200 rounded-2xl px-8 hover:border-fteck-cyan/30 transition-all">
+                <label class="flex justify-between items-center py-6 cursor-pointer group">
+                    <span class="text-lg font-bold group-hover:text-fteck-cyan transition-colors">Vou falar com o Fábio por vídeo?</span>
+                    <input type="checkbox" class="hidden">
+                    <i class="fas fa-plus text-gray-300 text-xs transition-transform duration-300"></i>
+                </label>
+                <div class="faq-content">
+                    <p class="text-gray-500 pb-6 leading-relaxed">Não. Esta é uma consultoria assíncrona focada em entrega técnica. Toda a comunicação é feita via formulários e relatórios digitais para garantir agilidade e documentação completa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-fteck-dark py-16 px-6 text-center border-t border-fteck-cyan/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-center items-center gap-3 mb-8">
+                <div class="w-8 h-8 bg-fteck-mid rounded flex items-center justify-center border border-fteck-cyan/30 text-white font-bold text-sm">F</div>
+                <span class="text-white font-black tracking-tighter">FTECK INFORMÁTICA</span>
+            </div>
+            <p class="text-white/20 text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Especialistas em Hardware & Reparo</p>
+            <p class="text-white/10 text-[9px] uppercase tracking-widest">&copy; 2026 Fteck Informática - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Timer Logic
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('minutes');
+        const secsEl = document.getElementById('seconds');
+        
+        let totalSeconds = 18 * 3600 + 45 * 60 + 12;
+
+        function updateTimer() {
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+
+            hoursEl.textContent = h.toString().padStart(2, '0');
+            minsEl.textContent = m.toString().padStart(2, '0');
+            secsEl.textContent = s.toString().padStart(2, '0');
+
+            if (totalSeconds > 0) totalSeconds--;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
